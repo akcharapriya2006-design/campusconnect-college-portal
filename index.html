@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CampusConnect - College Event and Student Activity Portal. Discover events, join clubs, track registrations, and explore announcements.">
+  <title>CampusConnect – College Event &amp; Student Activity Portal</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons 1.11.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <span class="brand-icon">🎓</span>
+        <span class="brand-name">Campus<span class="text-primary-gradient">Connect</span></span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links & Controls -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home" id="nav-home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#events" id="nav-events">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#clubs" id="nav-clubs">Clubs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#announcements" id="nav-announcements">Announcements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dashboard" id="nav-dashboard">
+              My Dashboard
+              <span id="navRegistrationBadge" class="badge rounded-pill bg-primary ms-1 d-none">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <!-- Dark Mode Toggle Button -->
+          <button id="themeToggleBtn" class="btn btn-outline-custom d-flex align-items-center gap-2" type="button"
+            aria-label="Toggle theme">
+            <span id="themeIcon" class="bi bi-moon-stars-fill"></span>
+            <span id="themeText">Dark Mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="hero-section py-5 position-relative overflow-hidden">
+    <div class="container py-lg-4">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <div class="badge-pill mb-3">
+            <span class="badge-dot"></span>
+            <span>Spring Semester 2026 • Live Campus Portal</span>
+          </div>
+          <h1 class="hero-title display-4 fw-extrabold mb-3">
+            Connect. Participate. <span class="text-primary-gradient">Grow.</span>
+          </h1>
+          <p class="hero-subtitle lead text-muted-custom mb-4">
+            Discover events, clubs and activities happening across your campus. Never miss a workshop, hackathon, or
+            cultural fest again.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="#events" class="btn btn-primary-custom btn-lg px-4 shadow-sm">
+              <i class="bi bi-compass me-2"></i>Explore Events
+            </a>
+            <a href="#dashboard" class="btn btn-secondary-custom btn-lg px-4">
+              <i class="bi bi-speedometer2 me-2"></i>View Dashboard
+            </a>
+          </div>
+
+          <!-- Hero Statistics -->
+          <div class="hero-stats row g-3 text-center text-sm-start">
+            <div class="col-4">
+              <div class="stat-card p-3">
+                <div class="stat-number text-primary-gradient fw-bold display-6">50+</div>
+                <div class="stat-label text-muted-custom small fw-semibold">Campus Events</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card p-3">
+                <div class="stat-number text-primary-gradient fw-bold display-6">1,200+</div>
+                <div class="stat-label text-muted-custom small fw-semibold">Active Students</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card p-3">
+                <div class="stat-number text-primary-gradient fw-bold display-6">25+</div>
+                <div class="stat-label text-muted-custom small fw-semibold">Student Clubs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Illustration -->
+        <div class="col-lg-5 text-center">
+          <div class="hero-illustration-wrapper position-relative mx-auto">
+            <div class="hero-glow"></div>
+            <div class="hero-visual-card p-4 rounded-4 shadow-lg">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary-subtle">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="status-indicator online"></span>
+                  <span class="fw-bold small">Campus Live Feed</span>
+                </div>
+                <span class="badge bg-danger-subtle text-danger fw-semibold">Flagship Event</span>
+              </div>
+
+              <!-- Mini Featured Card inside visual -->
+              <div class="featured-preview-box text-start p-3 rounded-3 mb-3">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="badge bg-primary-subtle text-primary">Technical Fest</span>
+                  <span class="text-warning small"><i class="bi bi-star-fill"></i> Trending</span>
+                </div>
+                <h5 class="fw-bold mb-1">TechFest 2026: Quantum Leap</h5>
+                <p class="small text-muted-custom mb-2">Grand 48-hour annual innovation, robotics &amp; AI symposium.
+                </p>
+                <div class="d-flex align-items-center justify-content-between small text-muted-custom">
+                  <span><i class="bi bi-calendar3 me-1"></i> Oct 24 - 26, 2026</span>
+                  <span class="text-success fw-semibold"><i class="bi bi-person-check me-1"></i> 320 Registered</span>
+                </div>
+              </div>
+
+              <!-- Interactive quick chips -->
+              <div class="row g-2 text-start">
+                <div class="col-6">
+                  <div class="quick-chip p-2 rounded-2">
+                    <i class="bi bi-trophy text-warning me-1"></i>
+                    <span class="small fw-semibold">₹1,50,000 Prizes</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="quick-chip p-2 rounded-2">
+                    <i class="bi bi-patch-check text-info me-1"></i>
+                    <span class="small fw-semibold">Certificates for all</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3 pt-2 text-center">
+                <a href="#events" class="small fw-bold text-decoration-none text-primary-gradient">
+                  Check all 15 upcoming events <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COUNTDOWN SECTION ================= -->
+  <section class="countdown-section py-4">
+    <div class="container">
+      <div class="countdown-banner p-4 p-md-4 rounded-4 shadow-sm">
+        <div class="row align-items-center gy-3">
+          <div class="col-lg-5 text-center text-lg-start">
+            <div class="d-inline-flex align-items-center gap-2 mb-1">
+              <span class="badge bg-danger text-white pulse-badge">HAPPENING SOON</span>
+              <span class="small fw-bold text-uppercase tracking-wider text-muted-custom">Flagship College Fest</span>
+            </div>
+            <h3 class="fw-extrabold mb-1">TECHFEST 2026</h3>
+            <p class="text-muted-custom small mb-0">Main Auditorium &amp; Innovation Labs • Annual Mega Festival</p>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="countdown-grid d-flex justify-content-center justify-content-lg-end gap-2 gap-sm-3 text-center">
+              <div class="countdown-unit">
+                <span id="countdownDays" class="unit-val">00</span>
+                <span class="unit-lbl">Days</span>
+              </div>
+              <div class="countdown-separator">:</div>
+              <div class="countdown-unit">
+                <span id="countdownHours" class="unit-val">00</span>
+                <span class="unit-lbl">Hours</span>
+              </div>
+              <div class="countdown-separator">:</div>
+              <div class="countdown-unit">
+                <span id="countdownMinutes" class="unit-val">00</span>
+                <span class="unit-lbl">Minutes</span>
+              </div>
+              <div class="countdown-separator">:</div>
+              <div class="countdown-unit">
+                <span id="countdownSeconds" class="unit-val">00</span>
+                <span class="unit-lbl">Seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= UPCOMING EVENTS SECTION ================= -->
+  <section id="events" class="py-5 section-offset">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="text-center mb-4">
+        <div class="badge-pill mb-2">
+          <span>Campus Calendar</span>
+        </div>
+        <h2 class="section-heading display-6 fw-bold mb-2">Upcoming Events</h2>
+        <p class="text-muted-custom max-width-600 mx-auto">
+          Explore technical symposia, hands-on workshops, sports tournaments, and cultural gatherings.
+        </p>
+      </div>
+
+      <!-- Search and Filter Controls -->
+      <div class="search-filter-card p-3 p-md-4 rounded-4 mb-4 shadow-sm">
+        <div class="row g-3 align-items-center">
+          <!-- Search Bar -->
+          <div class="col-lg-5">
+            <div class="search-input-wrapper position-relative">
+              <i class="bi bi-search search-icon"></i>
+              <input type="text" id="eventSearchInput" class="form-control form-control-lg ps-5 custom-search-bar"
+                placeholder="Search events by title, venue, or keyword..." aria-label="Search events">
+              <button id="clearSearchBtn" class="btn btn-link clear-search-btn d-none" type="button"
+                aria-label="Clear search">
+                <i class="bi bi-x-circle-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Buttons -->
+          <div class="col-lg-7">
+            <div class="category-filters d-flex flex-wrap gap-2 justify-content-lg-end" id="categoryFilterContainer">
+              <button class="btn btn-filter active" data-category="All" type="button">All</button>
+              <button class="btn btn-filter" data-category="Technical" type="button">Technical</button>
+              <button class="btn btn-filter" data-category="Workshop" type="button">Workshop</button>
+              <button class="btn btn-filter" data-category="Sports" type="button">Sports</button>
+              <button class="btn btn-filter" data-category="Cultural" type="button">Cultural</button>
+              <button class="btn btn-filter" data-category="Hackathon" type="button">Hackathon</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events Grid Container -->
+      <div class="row g-4" id="eventsGrid">
+        <!-- Event cards are dynamically rendered by script.js -->
+      </div>
+
+      <!-- No Events Found State -->
+      <div id="noEventsMessage" class="empty-state-box text-center p-5 rounded-4 d-none">
+        <div class="empty-icon mb-3">🔍</div>
+        <h4 class="fw-bold mb-2">No events found</h4>
+        <p class="text-muted-custom mb-3">We couldn't find any events matching your search or selected filter.</p>
+        <button id="resetFiltersBtn" class="btn btn-outline-custom">
+          <i class="bi bi-arrow-counterclockwise me-1"></i>Reset Search &amp; Filters
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPLORE CAMPUS CLUBS ================= -->
+  <section id="clubs" class="py-5 bg-subtle-section section-offset">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="badge-pill mb-2">
+          <span>Student Communities</span>
+        </div>
+        <h2 class="section-heading display-6 fw-bold mb-2">Explore Campus Clubs</h2>
+        <p class="text-muted-custom max-width-600 mx-auto">
+          Join student-led organizations to build projects, learn high-demand skills, and make lifelong friends.
+        </p>
+      </div>
+
+      <!-- Clubs Grid -->
+      <div class="row g-4" id="clubsGrid">
+        <!-- Club cards are dynamically rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LATEST ANNOUNCEMENTS ================= -->
+  <section id="announcements" class="py-5 section-offset">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="badge-pill mb-2">
+          <span>Campus Bulletin</span>
+        </div>
+        <h2 class="section-heading display-6 fw-bold mb-2">Latest Announcements</h2>
+        <p class="text-muted-custom max-width-600 mx-auto">
+          Official notices, schedule updates, auditions, and circulars from the college administration.
+        </p>
+      </div>
+
+      <!-- Announcements Grid -->
+      <div class="row g-4" id="announcementsGrid">
+        <!-- Announcement cards are dynamically rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MY DASHBOARD ================= -->
+  <section id="dashboard" class="py-5 bg-subtle-section section-offset">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="badge-pill mb-2">
+          <span>Student Control Center</span>
+        </div>
+        <h2 class="section-heading display-6 fw-bold mb-2">My Dashboard</h2>
+        <p class="text-muted-custom max-width-600 mx-auto">
+          Track your event bookings, view unique registration IDs, manage enrolled clubs, and stay organized.
+        </p>
+      </div>
+
+      <!-- 4 Statistics Cards -->
+      <div class="row g-3 g-md-4 mb-5">
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dash-stat-icon bg-primary-subtle text-primary">
+                <i class="bi bi-ticket-perforated-fill"></i>
+              </span>
+              <span class="badge bg-primary-subtle text-primary small">Active</span>
+            </div>
+            <div id="statRegisteredEvents" class="dash-stat-value fw-extrabold display-6">0</div>
+            <div class="dash-stat-label text-muted-custom fw-semibold small">Registered Events</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dash-stat-icon bg-warning-subtle text-warning">
+                <i class="bi bi-calendar-check-fill"></i>
+              </span>
+              <span class="badge bg-warning-subtle text-warning small">Scheduled</span>
+            </div>
+            <div id="statUpcomingEvents" class="dash-stat-value fw-extrabold display-6">0</div>
+            <div class="dash-stat-label text-muted-custom fw-semibold small">Upcoming Events</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dash-stat-icon bg-success-subtle text-success">
+                <i class="bi bi-patch-check-fill"></i>
+              </span>
+              <span class="badge bg-success-subtle text-success small">History</span>
+            </div>
+            <div id="statCompletedEvents" class="dash-stat-value fw-extrabold display-6">1</div>
+            <div class="dash-stat-label text-muted-custom fw-semibold small">Completed Events</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="dash-stat-card p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dash-stat-icon bg-info-subtle text-info">
+                <i class="bi bi-people-fill"></i>
+              </span>
+              <span class="badge bg-info-subtle text-info small">Memberships</span>
+            </div>
+            <div id="statClubsJoined" class="dash-stat-value fw-extrabold display-6">0</div>
+            <div class="dash-stat-label text-muted-custom fw-semibold small">Clubs Joined</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Registrations List Section -->
+      <div class="registrations-wrapper p-4 p-md-4 rounded-4 shadow-sm">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4 pb-3 border-bottom border-secondary-subtle">
+          <div>
+            <h4 class="fw-bold mb-1">
+              <i class="bi bi-card-checklist text-primary me-2"></i>My Registrations
+            </h4>
+            <p class="text-muted-custom small mb-0">Managed and persisted through browser LocalStorage</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button id="quickRefreshDashBtn" class="btn btn-sm btn-outline-custom" title="Refresh records">
+              <i class="bi bi-arrow-repeat me-1"></i>Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Container for Registrations -->
+        <div id="registrationsContainer">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer-section pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="d-inline-flex align-items-center gap-2 text-decoration-none mb-3" href="#home">
+            <span class="brand-icon">🎓</span>
+            <span class="brand-name fs-4">Campus<span class="text-primary-gradient">Connect</span></span>
+          </a>
+          <p class="text-muted-custom small mb-3">
+            Connecting students with campus opportunities. The all-in-one web portal for university events, clubs,
+            workshops, and academic community activities.
+          </p>
+          <div class="d-flex gap-3 text-muted-custom fs-5">
+            <a href="#events" class="footer-social-link" title="Campus Events"><i class="bi bi-calendar-event"></i></a>
+            <a href="#clubs" class="footer-social-link" title="Student Clubs"><i class="bi bi-people"></i></a>
+            <a href="#dashboard" class="footer-social-link" title="Student Dashboard"><i
+                class="bi bi-speedometer2"></i></a>
+            <a href="mailto:campusconnect@example.com" class="footer-social-link" title="Email Portal"><i
+                class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold text-uppercase tracking-wider mb-3">Quick Links</h6>
+          <ul class="list-unstyled footer-links small">
+            <li class="mb-2"><a href="#home"><i class="bi bi-chevron-right me-1"></i>Home</a></li>
+            <li class="mb-2"><a href="#events"><i class="bi bi-chevron-right me-1"></i>Events</a></li>
+            <li class="mb-2"><a href="#clubs"><i class="bi bi-chevron-right me-1"></i>Clubs</a></li>
+            <li class="mb-2"><a href="#announcements"><i class="bi bi-chevron-right me-1"></i>Announcements</a></li>
+            <li class="mb-2"><a href="#dashboard"><i class="bi bi-chevron-right me-1"></i>My Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="col-lg-2 col-md-6">
+          <h6 class="fw-bold text-uppercase tracking-wider mb-3">Activity Hub</h6>
+          <ul class="list-unstyled footer-links small">
+            <li class="mb-2"><span class="badge bg-secondary-subtle text-secondary-emphasis">Technical Fest</span></li>
+            <li class="mb-2"><span class="badge bg-secondary-subtle text-secondary-emphasis">Coding Hackathons</span>
+            </li>
+            <li class="mb-2"><span class="badge bg-secondary-subtle text-secondary-emphasis">Annual Sports Meet</span>
+            </li>
+            <li class="mb-2"><span class="badge bg-secondary-subtle text-secondary-emphasis">Cultural Fest</span></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold text-uppercase tracking-wider mb-3">Contact Support</h6>
+          <ul class="list-unstyled small text-muted-custom">
+            <li class="d-flex align-items-center gap-2 mb-2">
+              <i class="bi bi-envelope-at text-primary"></i>
+              <a href="mailto:campusconnect@example.com"
+                class="text-decoration-none text-muted-custom">campusconnect@example.com</a>
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2">
+              <i class="bi bi-telephone text-primary"></i>
+              <a href="tel:+919876543210" class="text-decoration-none text-muted-custom">+91 98765 43210</a>
+            </li>
+            <li class="d-flex align-items-start gap-2 mb-2">
+              <i class="bi bi-geo-alt text-primary mt-1"></i>
+              <span>Student Affairs Center, Block C, University Campus</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-secondary-subtle my-4">
+
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start small text-muted-custom">
+          © 2026 CampusConnect. All Rights Reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end small text-muted-custom mt-2 mt-md-0">
+          Designed for University Internship &amp; Demonstration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: EVENT REGISTRATION ================= -->
+  <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom border-secondary-subtle pb-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="modal-icon-badge bg-primary-subtle text-primary">
+              <i class="bi bi-calendar2-plus-fill"></i>
+            </div>
+            <div>
+              <h5 class="modal-title fw-bold" id="registrationModalLabel">Event Registration</h5>
+              <p class="text-muted-custom small mb-0">Fill in your student credentials to reserve a seat</p>
+            </div>
+          </div>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form id="registrationForm" novalidate>
+          <div class="modal-body p-4">
+            <!-- Selected Event Banner -->
+            <div class="selected-event-banner p-3 rounded-3 mb-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span id="regModalCategory" class="badge bg-primary-subtle text-primary mb-1">Category</span>
+                  <h6 id="regModalEventTitle" class="fw-bold mb-0">Event Title</h6>
+                </div>
+                <div class="text-end small text-muted-custom">
+                  <div id="regModalEventDate"><i class="bi bi-calendar3 me-1"></i>Date</div>
+                  <div id="regModalEventVenue"><i class="bi bi-geo-alt me-1"></i>Venue</div>
+                </div>
+              </div>
+              <input type="hidden" id="regModalEventId" name="eventId">
+            </div>
+
+            <!-- Form alert error box -->
+            <div id="regFormAlert" class="alert alert-danger d-none py-2 small" role="alert"></div>
+
+            <!-- Student Name -->
+            <div class="mb-3">
+              <label for="studentName" class="form-label fw-semibold small">Student Name <span
+                  class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" id="studentName" placeholder="e.g. Alex Morgan" required>
+              </div>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+
+            <!-- Register Number -->
+            <div class="mb-3">
+              <label for="registerNumber" class="form-label fw-semibold small">Register Number <span
+                  class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-card-heading"></i></span>
+                <input type="text" class="form-control" id="registerNumber" placeholder="e.g. 21CS045" required>
+              </div>
+              <div class="invalid-feedback">Please enter your college register number.</div>
+            </div>
+
+            <!-- Department and Year in 2 columns -->
+            <div class="row g-2 mb-3">
+              <div class="col-sm-7">
+                <label for="department" class="form-label fw-semibold small">Department <span
+                    class="text-danger">*</span></label>
+                <select class="form-select" id="department" required>
+                  <option value="" selected disabled>Select Department</option>
+                  <option value="Computer Science & Engineering">Computer Science &amp; Engg</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Electronics & Communication">Electronics &amp; Comm</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Electrical & Electronics">Electrical &amp; Electronics</option>
+                  <option value="Biotechnology">Biotechnology</option>
+                  <option value="Management Studies">Management Studies</option>
+                </select>
+                <div class="invalid-feedback">Please select your department.</div>
+              </div>
+              <div class="col-sm-5">
+                <label for="studentYear" class="form-label fw-semibold small">Year <span
+                    class="text-danger">*</span></label>
+                <select class="form-select" id="studentYear" required>
+                  <option value="" selected disabled>Year</option>
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                </select>
+                <div class="invalid-feedback">Select year.</div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="studentEmail" class="form-label fw-semibold small">Email Address <span
+                  class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" id="studentEmail" placeholder="e.g. alex@college.edu" required>
+              </div>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-3">
+              <label for="studentPhone" class="form-label fw-semibold small">Phone Number (10 Digits) <span
+                  class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input type="tel" class="form-control" id="studentPhone" placeholder="e.g. 9876543210" maxlength="10"
+                  required>
+              </div>
+              <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+            </div>
+
+            <div class="form-check small text-muted-custom">
+              <input class="form-check-input" type="checkbox" id="agreeTerms" required checked>
+              <label class="form-check-label" for="agreeTerms">
+                I agree to the college event participation rules &amp; conduct.
+              </label>
+            </div>
+          </div>
+
+          <div class="modal-footer border-top border-secondary-subtle">
+            <button type="button" class="btn btn-secondary-custom" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" id="submitRegBtn" class="btn btn-primary-custom px-4">
+              <i class="bi bi-check2-circle me-1"></i>Confirm Registration
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: EVENT DETAILS ================= -->
+  <div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close shadow-none ms-auto" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 pt-0">
+          <div class="event-details-img-wrapper rounded-3 overflow-hidden mb-3 position-relative shadow-sm"
+            style="height: 200px;">
+            <img id="detailModalImage" src="" alt="Event Image" class="w-100 h-100 object-fit-cover"
+              style="object-fit: cover;">
+            <div class="event-img-overlay"></div>
+          </div>
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span id="detailCategoryBadge" class="badge bg-primary-subtle text-primary">Category</span>
+            <span id="detailTrendingBadge" class="badge bg-warning-subtle text-warning">Featured</span>
+          </div>
+
+          <h3 id="detailTitle" class="fw-bold mb-2">Event Title</h3>
+
+          <div class="row g-3 my-3 p-3 rounded-3 details-meta-box">
+            <div class="col-sm-6 col-md-3">
+              <div class="small text-muted-custom"><i class="bi bi-calendar3 me-1 text-primary"></i> Date</div>
+              <div id="detailDate" class="fw-semibold">Date Info</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="small text-muted-custom"><i class="bi bi-clock me-1 text-primary"></i> Time</div>
+              <div id="detailTime" class="fw-semibold">Time Info</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="small text-muted-custom"><i class="bi bi-geo-alt me-1 text-primary"></i> Venue</div>
+              <div id="detailVenue" class="fw-semibold">Venue Info</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="small text-muted-custom"><i class="bi bi-person-badge me-1 text-primary"></i> Available Seats
+              </div>
+              <div id="detailSeats" class="fw-semibold text-success">Seats</div>
+            </div>
+          </div>
+
+          <h6 class="fw-bold mt-4 mb-2">About This Event</h6>
+          <p id="detailDescription" class="text-muted-custom lead-sm mb-3">Event description goes here.</p>
+
+          <h6 class="fw-bold mb-2">What's Included</h6>
+          <ul id="detailPerksList" class="list-unstyled row g-2 small text-muted-custom mb-4">
+            <!-- Perks populated by JS -->
+          </ul>
+
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top border-secondary-subtle">
+            <div class="small text-muted-custom">
+              Organized by: <span id="detailOrganizer" class="fw-semibold text-body">Department</span>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-secondary-custom" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="detailRegisterBtn" class="btn btn-primary-custom px-4">
+                <i class="bi bi-pencil-square me-1"></i>Register Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: ANNOUNCEMENT DETAILS ================= -->
+  <div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg">
+        <div class="modal-header border-bottom border-secondary-subtle pb-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="modal-icon-badge bg-warning-subtle text-warning">
+              <i class="bi bi-megaphone-fill"></i>
+            </div>
+            <div>
+              <span id="announcementModalCategory" class="badge bg-secondary-subtle text-secondary small mb-1">Official
+                Notice</span>
+              <h5 class="modal-title fw-bold" id="announcementModalTitle">Announcement Title</h5>
+            </div>
+          </div>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="d-flex align-items-center gap-2 small text-muted-custom mb-3">
+            <i class="bi bi-calendar3"></i>
+            <span id="announcementModalDate">Published Date</span>
+            <span>•</span>
+            <span id="announcementModalAuthor">Campus Administration</span>
+          </div>
+          <div id="announcementModalContent" class="text-muted-custom mb-4">
+            <!-- Announcement content -->
+          </div>
+          <div class="p-3 rounded-3 bg-subtle-section border border-secondary-subtle small text-muted-custom">
+            <i class="bi bi-info-circle me-1 text-primary"></i> For questions regarding this circular, contact the Dean
+            of Student Affairs or respective faculty leads.
+          </div>
+        </div>
+        <div class="modal-footer border-top border-secondary-subtle">
+          <button type="button" class="btn btn-secondary-custom" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CANCEL REGISTRATION CONFIRMATION ================= -->
+  <div class="modal fade" id="cancelConfirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 rounded-4 shadow-lg text-center p-4">
+        <div class="cancel-icon-wrapper mb-3 mx-auto">
+          <i class="bi bi-exclamation-triangle-fill text-danger fs-1"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Cancel Registration?</h5>
+        <p class="text-muted-custom small mb-4">
+          Are you sure you want to cancel your registration for <strong id="cancelEventNameText" class="text-body">this
+            event</strong>? Your seat will be released.
+        </p>
+        <div class="d-flex gap-2 justify-content-center">
+          <button type="button" class="btn btn-secondary-custom px-3" data-bs-dismiss="modal">Keep Booking</button>
+          <button type="button" id="confirmCancelBtn" class="btn btn-danger px-3">Yes, Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BOOTSTRAP TOAST CONTAINER ================= -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index: 1090;">
+    <!-- Toasts dynamically appended via script.js showToast() -->
+  </div>
+
+  <!-- Bootstrap 5.3.3 Bundle JS with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom Application Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
